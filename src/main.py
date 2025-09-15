@@ -10,6 +10,8 @@ from mirbot_client import MirBotClient, system_prompt
 import time
 from PySide6.QtGui import QIcon
 import os
+
+
 def resource_path(relative_path):
   
     try:
@@ -33,7 +35,7 @@ class BotThread(QThread):
             self.finished.emit(f"❌ خطا در پردازش پیام: {e}")
 
 
-# پنجره تاریخچه چت‌ها
+
 class HistoryDialog(QDialog):
     def __init__(self, db: ChatDatabase):
         super().__init__()
@@ -66,17 +68,15 @@ class MainWindow(QMainWindow):
         self.client = MirBotClient(system_prompt=system_prompt)
         self.current_chat_id = self.db.new_chat()
 
-        # ---------- UI ----------
-        # سایدبار
         self.chat_list = QListWidget()
         self.chat_list.itemClicked.connect(self.load_selected_chat)
 
-        # بخش چت
+      
         self.chat_display = QTextEdit()
         self.chat_display.setReadOnly(True)
         self.chat_display.setStyleSheet("font-size: 14px;")
 
-        # انیمیشن Loading ساده
+        
         self.loading_label = QLabel("⏳ در حال پردازش...")
         self.loading_label.setAlignment(Qt.AlignCenter)
         self.loading_label.hide()
@@ -95,7 +95,7 @@ class MainWindow(QMainWindow):
         chat_layout.addWidget(self.loading_label)
         chat_layout.addLayout(input_layout)
 
-        # Splitter
+     
         splitter = QSplitter(Qt.Horizontal)
         sidebar = QWidget()
         s_layout = QVBoxLayout(sidebar)
@@ -113,7 +113,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(splitter)
         self.setCentralWidget(container)
 
-        # ---------- Menu ----------
+   
         menu = self.menuBar().addMenu("گزینه‌ها")
         new_chat = menu.addAction("چت جدید")
         new_chat.triggered.connect(self.new_chat)
@@ -128,7 +128,6 @@ class MainWindow(QMainWindow):
 
         self.load_chats()
 
-    # ---------- Chat Management ----------
     def load_chats(self):
         self.chat_list.clear()
         for chat_id, title in self.db.get_chats():
@@ -146,7 +145,7 @@ class MainWindow(QMainWindow):
         self.load_chats()
         self.chat_display.clear()
 
-    # ---------- Sending Messages ----------
+   
     def send_message(self):
         msg = self.message_input.text().strip()
         if not msg:
@@ -156,11 +155,11 @@ class MainWindow(QMainWindow):
         self.chat_display.append(f"👤 شما: {msg}")
         self.message_input.clear()
 
-        # نمایش Loading
+      
         self.loading_label.show()
         self.send_btn.setEnabled(False)
 
-        # اجرای Thread
+     
         self.thread = BotThread(self.client, msg)
         self.thread.finished.connect(self.receive_reply)
         self.thread.start()
@@ -172,7 +171,7 @@ class MainWindow(QMainWindow):
         self.db.add_message(self.current_chat_id, "🤖 ربات", reply)
         self.chat_display.append(f"🤖 ربات: {reply}")
 
-    # ---------- Export Chat ----------
+  
     def export_chat(self):
         path, _ = QFileDialog.getSaveFileName(self, "ذخیره چت", "", "Text Files (*.txt)")
         if path:
@@ -182,12 +181,12 @@ class MainWindow(QMainWindow):
                     f.write(f"{sender}: {content}\n")
             QMessageBox.information(self, "ذخیره شد", "چت ذخیره شد!")
 
-    # ---------- Show History ----------
+   
     def show_history(self):
         dlg = HistoryDialog(self.db)
         dlg.exec()
 
-    # ---------- Clear History ----------
+ 
     def clear_history(self):
         reply = QMessageBox.question(
             self,
@@ -197,7 +196,7 @@ class MainWindow(QMainWindow):
             QMessageBox.No
         )
         if reply == QMessageBox.Yes:
-            self.db.clear_all()  # باید متد clear_all رو توی ChatDatabase پیاده‌سازی کرده باشی
+            self.db.clear_all() 
             self.load_chats()
             self.chat_display.clear()
             QMessageBox.information(self, "پاک شد", "تمام تاریخچه چت‌ها پاک شد.")
@@ -214,3 +213,4 @@ if __name__ == "__main__":
     window = MainWindow()
     window.show()
     sys.exit(app.exec())
+
