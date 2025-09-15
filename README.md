@@ -31,7 +31,8 @@ A clean and simple desktop application for chatting with the AI bot **MirBot** w
 1. فایل زیپ را از پوشه `dist` یا لینک مستقیم زیر دانلود کنید:  
    Download the zip file from the `dist` folder or directly here:  
 
-   [📥 دانلود مستقیم MirBot-Desktop.zip](https://drive.google.com/uc?export=download&id=1fodTK9vo6KXOBm0yQZBaSvPlC2H46o97)
+[📥 دانلود مستقیم MirBot-Desktop.zip](https://github.com/amirhossinpython/MirBot-Desktop/releases/download/v0.1-beta/main.zip)
+
 
 2. اطمینان حاصل کنید که فایل‌های `ui.qss` و `icon.ico` در کنار فایل exe قرار داشته باشند.  
    Make sure `ui.qss` and `icon.ico` are in the same folder as the exe.  
