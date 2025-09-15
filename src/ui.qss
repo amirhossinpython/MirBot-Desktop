@@ -1,0 +1,100 @@
+/* ---------- پنجره اصلی ---------- */
+QMainWindow {
+    background-color: #181828;
+    color: #ffffff;
+    font-family: "Vazirmatn", "Tahoma";
+    font-size: 14px;
+}
+
+/* ---------- جعبه متن و ورودی ---------- */
+QTextEdit, QLineEdit {
+    background-color: #252535;
+    color: #f1f1f1;
+    border-radius: 10px;
+    padding: 8px;
+    selection-background-color: #3399ff;
+    selection-color: #fff;
+    border: 1px solid #333;
+}
+
+/* ---------- دکمه‌ها ---------- */
+QPushButton {
+    background-color: #0078d7;
+    color: white;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background-color: #3399ff;
+}
+QPushButton:pressed {
+    background-color: #005a9e;
+}
+QPushButton:disabled {
+    background-color: #444;
+    color: #888;
+}
+
+/* ---------- لیست چت ---------- */
+QListWidget {
+    background-color: #202030;
+    color: #ddd;
+    border-radius: 10px;
+    padding: 6px;
+    border: 1px solid #2e2e3f;
+}
+QListWidget::item:selected {
+    background-color: #0078d7;
+    color: #fff;
+    border-radius: 6px;
+    margin: 2px;
+    padding: 4px;
+}
+
+/* ---------- اسکرول‌بار ---------- */
+QScrollBar:vertical {
+    background: #202030;
+    width: 10px;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical {
+    background: #555;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #777;
+}
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background: none;
+    border: none;
+    height: 0px;
+}
+
+/* ---------- منوبار ---------- */
+QMenuBar {
+    background-color: #202030;
+    color: #fff;
+}
+QMenuBar::item:selected {
+    background-color: #0078d7;
+    border-radius: 6px;
+}
+
+/* ---------- منو ---------- */
+QMenu {
+    background-color: #2e2e3f;
+    color: #fff;
+    border-radius: 8px;
+    padding: 6px;
+}
+QMenu::item:selected {
+    background-color: #0078d7;
+}
+
+/* ---------- برچسب لودینگ ---------- */
+QLabel {
+    color: #bbb;
+    font-style: italic;
+}
