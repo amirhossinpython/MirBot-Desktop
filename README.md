@@ -1,6 +1,6 @@
 # MirBot AI - Desktop (Beta) 🚀
 
-![Status](https://img.shields.io/badge/status-beta-orange) ![Platform](https://img.shields.io/badge/platform-windows-blue)  
+[دانلود مستقیم MirBot-Desktop.zip](https://drive.google.com/uc?export=download&id=1fodTK9vo6KXOBm0yQZBaSvPlC2H46o97)
 ⚠️ **نسخه اولیه و تست (Beta)** ⚠️  
 این نسخه در مرحله آزمایشی قرار دارد و ممکن است برخی ویژگی‌ها کامل نباشند.  
 **Initial Beta Version** – This release is in testing phase and some features may not be fully functional.
