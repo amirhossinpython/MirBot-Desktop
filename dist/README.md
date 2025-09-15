@@ -2,7 +2,8 @@
 
 ### 🔹 MirBot Desktop
 
-- **[دانلود مستقیم (MirBot-Desktop.zip)](https://drive.google.com/uc?export=download&id=1fodTK9vo6KXOBm0yQZBaSvPlC2H46o97)**
+[📥 دانلود مستقیم MirBot-Desktop.zip](https://github.com/amirhossinpython/MirBot-Desktop/releases/download/v0.1-beta/main.zip)
+
 - ⚠️ **نسخه اولیه (Beta)**  
   این نسخه در مرحله‌ی آزمایشی قرار دارد و ممکن است برخی قابلیت‌ها به‌طور کامل پیاده‌سازی نشده باشند.
 - 🛠️ مناسب برای تست و دریافت بازخورد کاربران  
