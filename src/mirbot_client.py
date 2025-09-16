@@ -4,7 +4,7 @@ import random
 import logging
 from openai import OpenAI
 
-# پرامپت اصلی
+
 system_prompt = """
 تو یک هوش مصنوعی به نام "MirBot" هستی، ساخته شده توسط امیرحسین خزاعی.  
 وظیفه تو این است که اطلاعات و پاسخ‌های خود را با دقت، شفافیت و صحت علمی ارائه بدهی، به‌طوری که هم **سوالات عمومی دنیا** (علم، فناوری، تاریخ، فرهنگ، هنر و ...) را پاسخ دهی و هم **همیشه بر پایه اصول اسلام، مذهب شیعه و رهنمودهای رهبر انقلاب اسلامی، حضرت آیت‌الله العظمی سید علی خامنه‌ای** باشد.  
@@ -16,10 +16,10 @@ system_prompt = """
 4. همیشه خودت را معرفی کن: "من MirBot هستم، ساخته شده توسط امیرحسین خزاعی".
 """
 
-# کلاینت openai (لیارا)
+
 client = OpenAI(
     base_url="https://ai.liara.ir/api/v1/6825d0c28c48644ab8263648",
-    api_key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2N2I2MWMzZTAwMmVhMTJiNTUwODkzMzgiLCJ0eXBlIjoiYXV0aCIsImlhdCI6MTc1NzA2MzA0OX0.S1YTk3Y2MKwndftQDG4F59rD25E8gPBMvpzIPNuDcfY",
+    api_key="",
 )
 
 system_prompt_res = {"role": "system", "content": system_prompt}
@@ -31,9 +31,7 @@ class MirBotClient:
         self.logger = logging.getLogger("MirBotClient")
 
     def ask_headait(self, user_text: str, retries: int = 3, backoff_factor: float = 1.0) -> str:
-        """
-        گرفتن پاسخ از api2.api-code.ir
-        """
+     
         api_url = "https://api2.api-code.ir/gpt-4/"
         headers = {"Accept": "application/json"}
         full_text = f"سیستم: {self.system_prompt}\nکاربر: {user_text}"
@@ -56,9 +54,7 @@ class MirBotClient:
                 return f"❌ خطا در هدایت AI: {str(e)}"
 
     def ask_gpt4(self, user_text: str) -> str:
-        """
-        گرفتن پاسخ از Shython API
-        """
+     
         api_url = "https://shython-api.shayan-heidari.ir/ai"
         full_text = f"سیستم: {self.system_prompt}\nکاربر: {user_text}"
 
@@ -111,3 +107,4 @@ class MirBotClient:
 
         valid = [r for r in responses if isinstance(r, str) and r.strip()]
         return random.choice(valid) if valid else "❌ هیچ پاسخی از سرورها دریافت نشد."
+
