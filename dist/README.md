@@ -2,7 +2,7 @@
 
 ## 🔹 دانلود نسخه‌ها
 
-[📥 دانلود مستقیم MirBot-Desktop-v2.zip](https://github.com/amirhossinpython/MirBot-Desktop/releases/download/v2.0/MirBot-Desktop-v2.zip)
+[📥 دانلود مستقیم MirBot-Desktop-v2.zip](https://github.com/amirhossinpython/MirBot-Desktop/releases/download/v2.0/MirBotAI-v2.zip)
 
 - ✅ **نسخه پایدار v2.0**  
   این نسخه شامل تمام قابلیت‌های اصلی MirBot است و آماده استفاده عمومی می‌باشد.
